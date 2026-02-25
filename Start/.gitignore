@@ -5,7 +5,7 @@
 unit_tests
 functional_tests
 coverage_report
-secured
+[project]
 *.out
 *.log
 *.html

@@ -21,9 +21,9 @@ NAME 		= [project]
 SRC 		= src/[project].c
 SRC_MAIN	= src/main.c
 SRC_TEST 	= tests/test_main.c
-OBJ 		= $(SRC:.c=.o)
-OBJ_MAIN	= $(SRC_MAIN:.c=.o)
-OBJ_TEST 	= $(SRC_TEST:.c=.o)
+OBJ 		:= $(patsubst %.c,%.o,$(SRC))
+OBJ_MAIN	:= $(patsubst %.c,%.o,$(SRC_MAIN))
+OBJ_TEST 	:= $(patsubst %.c,%.o,$(SRC_TEST))
 
 # ────────────────────────────────────────────────────────────
 # COMPILER

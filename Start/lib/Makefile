@@ -8,7 +8,7 @@
 .PHONY: all clean fclean re
 
 SRC = $(shell find src -name '*.c')
-OBJ = $(SRC:.c=.o)
+OBJ := $(patsubst %.c,%.o,$(SRC))
 
 CC = epiclang
 CFLAGS = -Wall -Wextra -g3 -Iinclude -O0
