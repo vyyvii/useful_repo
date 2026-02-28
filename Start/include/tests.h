@@ -7,13 +7,11 @@
 
 #ifndef TEST_H
     #define TEST_H
-    #include <stddef.h>
-    #include <stdarg.h>
-    #include <setjmp.h>
-    #include <cmocka.h>
+    #include <criterion/criterion.h>
+    #include <criterion/redirect.h>
     #include "my.h"
 
-// MAIN
-char *capture_stdout(void (*func)(void));
+// TOOL
+void redirect_all_std(void);
 
 #endif /* TEST_H */

@@ -20,7 +20,7 @@ NAME 		= [project]
 # ─────────────────────────────────────────────────────────────
 SRC 		= src/[project].c
 SRC_MAIN	= src/main.c
-SRC_TEST 	= tests/test_main.c
+SRC_TEST 	= tests/test_tool.c
 OBJ 		:= $(patsubst %.c,%.o,$(SRC))
 OBJ_MAIN	:= $(patsubst %.c,%.o,$(SRC_MAIN))
 OBJ_TEST 	:= $(patsubst %.c,%.o,$(SRC_TEST))
@@ -40,7 +40,7 @@ LDFLAGS 	= -L./ -lUtilsLib
 # TEST FLAGS & LIBS
 # ─────────────────────────────────────────────────────────────
 TEST_FLAGS  = --coverage
-TEST_LIBS   = -lcmocka
+TEST_LIBS   = -lcriterion
 
 # ─────────────────────────────────────────────────────────────
 # TOOLS
