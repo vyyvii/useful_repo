@@ -47,7 +47,7 @@ TEST_LIBS   = -lcriterion
 # ─────────────────────────────────────────────────────────────
 REMOVE 		= rm -f -r
 RM_FILES 	= "*.gcno" "*.gcda" "*.html" "*.css" \
-			  "*.gcov" "*.log" ".out" "*.o" "*.swp"
+			  "*.gcov" "*.log" "*.out" "*.o" "*.swp"
 
 # ─────────────────────────────────────────────────────────────
 # BUILDING RULES
@@ -79,7 +79,7 @@ clean:
 	$(REMOVE) $(OBJ) $(OBJ_MAIN) $(OBJ_TEST)
 
 fclean: clean
-	$(REMOVE) $(NAME) unit_tests functional_tests ncurses_state libUtilsLib.a
+	$(REMOVE) $(NAME) unit_tests functional_tests libUtilsLib.a
 	for f in $(RM_FILES); do find . -name "$$f" -delete; done
 	cd lib && make fclean && cd ../
 
