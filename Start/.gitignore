@@ -1,11 +1,16 @@
+# Compilation objects & tmp files
 *.a
 *.o
 *.gcno
 *.gcda
+
+# Compilated files & binaries
 unit_tests
 functional_tests
 coverage_report
 [project]
+
+# Useless files
 *.out
 *.log
 *.html
