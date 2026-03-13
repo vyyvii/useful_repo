@@ -32,9 +32,6 @@ SRC = 	src/char/is_digit.c \
 		src/matrix/my_show_word_array.c \
 		src/matrix/str_to_array.c \
 		src/matrix/str_to_matrice.c \
-		src/matrix/str_to_word_array_space.c \
-		src/matrix/str_to_word_array.c \
-		src/matrix/uniq_words.c \
 		src/mem/free_table.c \
 		src/mem/my_memcpy.c \
 		src/mem/my_strcpy.c \
