@@ -15,11 +15,13 @@
  * @note Complexity: O(total characters)
  * @note Part of UtilsLib by Victor Defauchy.
  */
-int my_show_word_array(char *const *tab)
+int my_show_word_array(char const **tab)
 {
     int i = 0;
 
-    while (tab && tab[i]) {
+    if (!tab)
+        return FAILURE;
+    while (tab[i]) {
         my_putstr(tab[i]);
         my_putchar('\n');
         i++;

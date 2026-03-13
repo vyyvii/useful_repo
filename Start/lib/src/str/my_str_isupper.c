@@ -17,6 +17,8 @@
  */
 int my_str_isupper(char const *str)
 {
+    if (!str)
+        return 0;
     while (*str) {
         if (*str >= 65 && *str <= 90)
             str++;

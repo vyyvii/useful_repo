@@ -19,9 +19,8 @@
  */
 void putcat(char *txt1, char *txt2)
 {
-    char *cat;
+    char *cat = my_strjoin(txt1, txt2);
 
-    cat = my_strjoin(txt1, txt2);
     if (!cat)
         return;
     my_putstr(cat);

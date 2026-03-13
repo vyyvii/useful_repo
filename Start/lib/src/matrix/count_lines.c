@@ -20,6 +20,8 @@ int count_lines(char *str)
     int lines = 1;
     size_t len = (size_t)my_strlen(str);
 
+    if (!len)
+        return 0;
     for (size_t i = 0; i < len; i++) {
         if (str[i] == '\n')
             lines++;

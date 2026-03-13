@@ -17,6 +17,8 @@
  */
 int my_str_isalpha(char const *str)
 {
+    if (!str)
+        return 0;
     while (*str) {
         if ((*str >= 65 && *str <= 90) || (*str >= 97 && *str <= 122))
             str++;

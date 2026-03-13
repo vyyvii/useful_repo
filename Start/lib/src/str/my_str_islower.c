@@ -17,6 +17,8 @@
  */
 int my_str_islower(char const *str)
 {
+    if (!str)
+        return 0;
     while (*str) {
         if (*str >= 97 && *str <= 122)
             str++;

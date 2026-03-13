@@ -17,6 +17,8 @@
  */
 int my_str_isprintable(char const *str)
 {
+    if (!str)
+        return 0;
     while (*str) {
         if (*str >= 32 && *str <= 126)
             str++;

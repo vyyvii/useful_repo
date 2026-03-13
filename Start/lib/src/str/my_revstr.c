@@ -17,18 +17,20 @@
  */
 char *my_revstr(char *str)
 {
-    int compteur = 0;
+    int count = 0;
     int i = 0;
-    char switcher;
-    int digit_switch;
+    char switcher = '\0';
+    int digit_switch = 0;
 
+    if (!str)
+        return NULL;
     while (str[i] != '\0') {
-        compteur++;
+        count++;
         i++;
     }
     i = 0;
-    while (i != compteur / 2) {
-        digit_switch = compteur - i - 1;
+    while (i != count / 2) {
+        digit_switch = count - i - 1;
         switcher = str[i];
         str[i] = str[digit_switch];
         str[digit_switch] = switcher;

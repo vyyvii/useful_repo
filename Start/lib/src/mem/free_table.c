@@ -19,7 +19,7 @@ void free_table(void **table)
 {
     if (!table)
         return;
-    for (size_t i = 0; table[i] != NULL; i++) {
+    for (size_t i = 0; table[i]; i++) {
         free(table[i]);
         table[i] = NULL;
     }

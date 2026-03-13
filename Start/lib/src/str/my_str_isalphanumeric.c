@@ -18,6 +18,8 @@
  */
 int my_str_isalphanumeric(char const *str)
 {
+    if (!str)
+        return 0;
     while (*str) {
         if ((*str >= 65 && *str <= 90) || (*str >= 97 && *str <= 122)
             || *str == 95 || (*str >= 48 && *str <= 57))

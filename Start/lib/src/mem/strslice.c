@@ -20,13 +20,13 @@
  */
 char *strslice(char *str, int from, int to)
 {
-    char *out;
+    char *out = NULL;
     int len_str = my_strlen(str);
     int j = 0;
 
     from = (from < 0) ? 0 : from;
     to = (to > len_str) ? len_str : to;
-    if (from >= to)
+    if (from >= to || !str)
         return NULL;
     out = malloc((to - from) + 1);
     if (!out)

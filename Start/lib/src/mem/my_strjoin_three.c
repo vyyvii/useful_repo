@@ -26,8 +26,11 @@ char *my_strjoin_three(char const *s1, char const *s2, char const *s3)
     char *res = malloc(len1 + len2 + len3 + 1);
     int i = 0;
 
-    if (!res)
+    if (!res || !len1 || !len2 || !len3) {
+        if (res)
+            free(res);
         return NULL;
+    }
     for (i = 0; i < len1; i++)
         res[i] = s1[i];
     for (i = 0; i < len2; i++)

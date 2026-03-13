@@ -19,7 +19,7 @@
  */
 void alpha_sort(char **array, int is_reverse)
 {
-    char *tmp;
+    char *tmp = NULL;
 
     for (int i = 1; array[i]; i++) {
         while (i > 0 && my_strcmp(array[i], array[i - 1]) == -is_reverse) {

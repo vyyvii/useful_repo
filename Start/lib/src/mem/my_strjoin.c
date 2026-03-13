@@ -24,8 +24,11 @@ char *my_strjoin(char const *s1, char const *s2)
     char *res = malloc(len1 + len2 + 1);
     int i = 0;
 
-    if (!res)
+    if (!res || !len1 || !len2) {
+        if (res)
+            free(res);
         return NULL;
+    }
     for (i = 0; i < len1; i++)
         res[i] = s1[i];
     for (i = 0; i < len2; i++)

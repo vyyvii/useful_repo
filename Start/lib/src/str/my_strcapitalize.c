@@ -9,9 +9,8 @@
 
 static int ltr(char c)
 {
-    if ((c < 65 || c > 90) && (c < 97 || c > 122) && (c < 48 || c > 57))
-        return 1;
-    return 0;
+    return (c < 65 || c > 90) && (c < 97 || c > 122) && (c < 48 || c > 57)
+        ? 1 : 0;
 }
 
 /**
@@ -27,6 +26,8 @@ char *my_strcapitalize(char *str)
 {
     int i = 0;
 
+    if (!str)
+        return NULL;
     while (str[i] != '\0') {
         if (str[i] >= 65 && str[i] <= 90)
             str[i] = str[i] + 32;

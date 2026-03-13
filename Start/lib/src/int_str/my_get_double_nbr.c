@@ -41,6 +41,8 @@ double my_get_double_nbr(char const *str)
     int sign = 1;
     double result = 0.0;
 
+    if (!str)
+        return 0.0;
     while (str[i] == ' ' || str[i] == '\t')
         i++;
     if (str[i] == '+' || str[i] == '-') {
@@ -49,8 +51,8 @@ double my_get_double_nbr(char const *str)
         i++;
     }
     if (str[i] < '0' || str[i] > '9')
-        return 0;
+        return 0.0;
     if (!go_in_number(&result, str, i))
-        return 0;
+        return 0.0;
     return result * sign;
 }

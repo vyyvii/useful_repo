@@ -62,7 +62,7 @@ static int fill_words(char *str, char *delims, char **array)
 {
     int i = 0;
     int j = 0;
-    int len;
+    int len = 0;
 
     while (str[i]) {
         i = next_word(str, delims, i);
@@ -90,8 +90,8 @@ static int fill_words(char *str, char *delims, char **array)
  */
 char **str_to_matrice(char *str, char *delims)
 {
-    int word_count;
-    char **array;
+    int word_count = 0;
+    char **array = NULL;
 
     if (!str || !delims)
         return NULL;

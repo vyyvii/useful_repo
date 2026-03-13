@@ -35,6 +35,8 @@ long long my_get_longlong_nbr(char const *str)
     int sign = 1;
     long long result = 0;
 
+    if (!str)
+        return 0;
     while (str[i] == ' ' || str[i] == '\t')
         i++;
     if (str[i] == '+' || str[i] == '-') {

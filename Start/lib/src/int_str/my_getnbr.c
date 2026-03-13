@@ -36,6 +36,8 @@ int my_getnbr(const char *str)
     int sign = 1;
     long result = 0;
 
+    if (!str)
+        return 0;
     while (str[i] == ' ' || str[i] == '\t')
         i++;
     if (str[i] == '+' || str[i] == '-') {

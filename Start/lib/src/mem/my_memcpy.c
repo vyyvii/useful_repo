@@ -23,6 +23,8 @@ void *my_memcpy(void *dest, const void *src, size_t size)
     unsigned char *d = dest;
     const unsigned char *s = src;
 
+    if (!dest || !src)
+        return NULL;
     for (size_t i = 0; i < size; i++)
         d[i] = s[i];
     return dest;

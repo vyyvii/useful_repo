@@ -10,7 +10,7 @@
 static int buffer_realoc(size_t *tot, size_t len, size_t read_size,
     char **buffer)
 {
-    char *new_buffer;
+    char *new_buffer = NULL;
 
     if (len + read_size + 1 > *tot) {
         while (len + read_size + 1 > *tot)
@@ -26,15 +26,15 @@ static int buffer_realoc(size_t *tot, size_t len, size_t read_size,
 static int file_runner(int fd, size_t *tot, char **buffer)
 {
     size_t len = 0;
-    char tmp[100];
-    ssize_t read_size = read(fd, tmp, 100);
+    char tmp[256];
+    ssize_t read_size = read(fd, tmp, 256);
 
     while (read_size > 0) {
-        if (buffer_realoc(tot, len, read_size, buffer) == 84)
+        if (buffer_realoc(tot, len, read_size, buffer) == FAILURE)
             return FAILURE;
         my_memcpy(*buffer + len, tmp, read_size);
         len += read_size;
-        read_size = read(fd, tmp, 100);
+        read_size = read(fd, tmp, 256);
     }
     if (read_size < 0)
         return FAILURE;
@@ -48,6 +48,7 @@ static int file_runner(int fd, size_t *tot, char **buffer)
  * @param file File path.
  * @return Allocated buffer containing the content (terminated by '\0'),
  * or NULL on error.
+ * @warning MAGIC NUMBERS because the allocated chunk is double if necessary !
  * @note Complexity: O(file size)
  * @note Ownership: The caller must `free` the buffer.
  * @note Part of UtilsLib by Victor Defauchy.
@@ -65,7 +66,7 @@ char *open_file(char *file)
         free(buffer);
         return NULL;
     }
-    if (file_runner(fd, &tot, &buffer) == 84) {
+    if (file_runner(fd, &tot, &buffer) == FAILURE) {
         free(buffer);
         close(fd);
         return NULL;

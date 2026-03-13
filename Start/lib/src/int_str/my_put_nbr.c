@@ -18,7 +18,7 @@
  */
 int my_put_nbr(int nb)
 {
-    long value = nb;
+    long value = (long)nb;
 
     if (value < 0) {
         my_putchar('-');
@@ -41,7 +41,7 @@ int my_put_nbr(int nb)
  */
 int my_put_nbr_err(int nb)
 {
-    long value = nb;
+    long value = (long)nb;
 
     if (value < 0) {
         my_putchar('-');

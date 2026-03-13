@@ -159,7 +159,7 @@ char **str_to_word_array(char *str);
 char **str_to_word_array_space(char *str);
 
 int nb_args(char **args);
-int my_show_word_array(char *const *tab);
+int my_show_word_array(char const **tab);
 int count_lines(char *str);
 
 /* ============================================================

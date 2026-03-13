@@ -19,9 +19,9 @@
 char *my_strdup(char const *str)
 {
     int len = my_strlen(str);
-    char *out = malloc(sizeof(char) * (len + 1));
+    char *out = (str) ? malloc(sizeof(char) * (len + 1)) : NULL;
 
-    if (!out)
+    if (!out || !str)
         return NULL;
     for (int i = 0; i <= len; i++)
         out[i] = str[i];

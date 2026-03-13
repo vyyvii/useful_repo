@@ -19,6 +19,8 @@ int my_str_isnum(char const *str)
 {
     int is_minus = 0;
 
+    if (!str)
+        return 0;
     while (*str) {
         if (is_digit(*str)) {
             str++;
