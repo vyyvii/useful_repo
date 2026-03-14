@@ -41,13 +41,32 @@ double **multiplies_two_matrices(double **A, double **B, int sizeA, int sizeB)
     return C;
 }
 
-double **divise_matrice(double **A, int sizeA, int divise_by)
+double **add_two_matrices(double **A, double **B, int sizeA, int sizeB)
 {
+    double **C = (sizeA == sizeB) ? malloc(sizeof(double *) * sizeA) : NULL;
+
+    if (!C)
+        return NULL;
     for (int i = 0; i < sizeA; i++) {
-        for (int j = 0; j < sizeA; j++)
-            A[i][j] /= divise_by;
+        C[i] = malloc(sizeof(double) * sizeB);
+        for (int j = 0; j < sizeB; j++)
+            C[i][j] = A[i][j] + B[i][j];
     }
-    return A;
+    return C;
+}
+
+double **divise_matrice_by_double(double **A, int sizeA, double divise_by)
+{
+    double **B = malloc(sizeof(double *) * sizeA);
+
+    if (!B)
+        return NULL;
+    for (int i = 0; i < sizeA; i++) {
+        B[i] = malloc(sizeof(double) * sizeA);
+        for (int j = 0; j < sizeA; j++)
+            B[i][j] = A[i][j] / divise_by;
+    }
+    return B;
 }
 
 double **construct_matrice(double *A, int sizeA)
@@ -65,7 +84,7 @@ double **construct_matrice(double *A, int sizeA)
             return NULL;
         }
         for (int j = 0; j < size; j++) {
-            matrice[i][j] = (A[k]) ? A[k] : 0.0;
+            matrice[i][j] = (k >= sizeA) ? A[k] : 0.0;
             k++;
         }
     }

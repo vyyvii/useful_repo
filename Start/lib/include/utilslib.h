@@ -100,10 +100,11 @@ int my_isneg(int n);
 void my_sort_int_array(int *array, int size);
 double my_sqrt(double nb);
 double **multiplies_two_matrices(double **A, double **B, int sizeA, int sizeB);
-double **divise_matrice(double **A, int sizeA, int divise_by);
+double **add_two_matrices(double **A, double **B, int sizeA, int sizeB);
+double **divise_matrice_by_double(double **A, int sizeA, double divise_by);
 double **construct_matrice(double *A, int sizeA);
 double **identity_matrice(int len);
-double my_factorial(double nb);
+int my_factorial(int nb);
 
 /* ============================================================
 ** INT_STR
