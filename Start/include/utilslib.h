@@ -25,13 +25,14 @@
  *
  * @note Time complexity is indicated when relevant.
  * @author Victor Defauchy
- * @date 14.03.2026
+ * @date 15.03.2026
  */
 
 #ifndef UTILSLIB
     #define UTILSLIB
     #define SUCCESS 0
     #define FAILURE 84
+    #define CHUNK 128
     #include <stddef.h>
     #include <stdio.h>
     #include <stdlib.h>

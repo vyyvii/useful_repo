@@ -7,27 +7,21 @@
 
 #include "utilslib.h"
 
-static int is_delim(char c, char *delims)
-{
-    for (int i = 0; delims[i]; i++) {
-        if (c == delims[i])
-            return 1;
-    }
-    return 0;
-}
-
 static int next_word(char *str, char *delims, int i)
 {
-    while (str[i] && is_delim(str[i], delims))
-        i++;
+    int sep_len = my_strlen(delims);
+
+    while (str[i] && my_strncmp(&str[i], delims, sep_len) == 0)
+        i += sep_len;
     return i;
 }
 
 static int word_length(char *str, char *delims, int i)
 {
     int len = 0;
+    int sep_len = my_strlen(delims);
 
-    while (str[i + len] && !is_delim(str[i + len], delims))
+    while (str[i + len] && my_strncmp(&str[i + len], delims, sep_len) != 0)
         len++;
     return len;
 }

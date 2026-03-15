@@ -26,15 +26,15 @@ static int buffer_realoc(size_t *tot, size_t len, size_t read_size,
 static int file_runner(int fd, size_t *tot, char **buffer)
 {
     size_t len = 0;
-    char tmp[256];
-    ssize_t read_size = read(fd, tmp, 256);
+    char tmp[CHUNK];
+    ssize_t read_size = read(fd, tmp, CHUNK);
 
     while (read_size > 0) {
         if (buffer_realoc(tot, len, read_size, buffer) == FAILURE)
             return FAILURE;
         my_memcpy(*buffer + len, tmp, read_size);
         len += read_size;
-        read_size = read(fd, tmp, 256);
+        read_size = read(fd, tmp, CHUNK);
     }
     if (read_size < 0)
         return FAILURE;
