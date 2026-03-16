@@ -14,7 +14,7 @@ bool get_bool(char *type)
 
 char *give_bool(bool type)
 {
-    char *out = out = (type) ? my_strdup("true") : my_strdup("false");;
+    char *out = (type) ? my_strdup("true") : my_strdup("false");;
 
     return (out) ? out : NULL;
 }
