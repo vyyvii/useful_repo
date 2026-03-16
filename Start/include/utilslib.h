@@ -25,7 +25,7 @@
  *
  * @note Time complexity is indicated when relevant.
  * @author Victor Defauchy
- * @date 15.03.2026
+ * @date 16.03.2026
  */
 
 #ifndef UTILSLIB
@@ -100,6 +100,7 @@ int my_is_prime(int nb);
 int my_isneg(int n);
 void my_sort_int_array(int *array, int size);
 double my_sqrt(double nb);
+int my_perfect_sqrt(int nb);
 void print_matrix(double **matrice, int line, int col);
 double **multiplies_two_matrices(double **A, double **B, int sizeA, int sizeB);
 double **add_two_matrices(double **A, double **B, int sizeA, int sizeB);
