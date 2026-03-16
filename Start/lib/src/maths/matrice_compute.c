@@ -88,6 +88,35 @@ double **add_two_matrices(double **A, double **B, int sizeA, int sizeB)
 
 /**
  * @ingroup maths
+ * @brief Soustract two matrices together.
+ * @param A The first matrix.
+ * @param B The second matrix.
+ * @param sizeA Number of rows of the matrices.
+ * @param sizeB Number of columns of the matrices.
+ * @return The resulting matrix of A - B, or NULL if allocation fails.
+ * @note Complexity: O(n^2)
+ * @note Part of UtilsLib by Victor Defauchy.
+ */
+double **soustract_two_matrices(double **A, double **B, int sizeA, int sizeB)
+{
+    double **C = (sizeA == sizeB) ? malloc(sizeof(double *) * sizeA) : NULL;
+
+    if (!C)
+        return NULL;
+    for (int i = 0; i < sizeA; i++) {
+        C[i] = malloc(sizeof(double) * sizeB);
+        if (!C[i]) {
+            free_partial_table((void **)C, i);
+            return NULL;
+        }
+        for (int j = 0; j < sizeB; j++)
+            C[i][j] = A[i][j] - B[i][j];
+    }
+    return C;
+}
+
+/**
+ * @ingroup maths
  * @brief Divide every element of a matrix by a scalar value.
  * @param A The matrix to divide.
  * @param sizeA The dimension of the square matrix.
@@ -113,64 +142,4 @@ double **divise_matrice_by_double(double **A, int sizeA, double divise_by)
             B[i][j] = A[i][j] / divise_by;
     }
     return B;
-}
-
-/**
- * @ingroup maths
- * @brief Construct a square matrix from a linear array of coefficients.
- * @param A The array containing the coefficients.
- * @param sizeA The number of coefficients in the array.
- * @return A newly allocated square matrix filled row by row,
- * or NULL if allocation fails.
- * @note The size of the matrix is determined using sqrt(sizeA).
- * @note Complexity: O(n^2)
- * @note Part of UtilsLib by Victor Defauchy.
- */
-double **construct_matrice(double *A, int sizeA)
-{
-    int size = (int)my_sqrt((double)sizeA);
-    double **matrice = malloc(sizeof(double *) * size);
-    int k = 0;
-
-    if (!matrice)
-        return NULL;
-    for (int i = 0; i < size; i++) {
-        matrice[i] = malloc(sizeof(double) * size);
-        if (!matrice[i]) {
-            free_partial_table((void **)matrice, i);
-            return NULL;
-        }
-        for (int j = 0; j < size; j++) {
-            matrice[i][j] = (k < sizeA) ? A[k] : 0.0;
-            k++;
-        }
-    }
-    return matrice;
-}
-
-/**
- * @ingroup maths
- * @brief Create an identity matrix.
- * @param size The dimension of the square matrix.
- * @return A size x size identity matrix, or NULL if allocation fails.
- * @note The identity matrix contains 1.0 on the diagonal and 0.0 elsewhere.
- * @note Complexity: O(n^2)
- * @note Part of UtilsLib by Victor Defauchy.
- */
-double **identity_matrice(int size)
-{
-    double **matrice = malloc(sizeof(double *) * size);
-
-    if (!matrice)
-        return NULL;
-    for (int i = 0; i < size; i++) {
-        matrice[i] = malloc(sizeof(double) * size);
-        if (!matrice[i]) {
-            free_partial_table((void **)matrice, i);
-            return NULL;
-        }
-        for (int j = 0; j < size; j++)
-            matrice[i][j] = (i == j) ? 1.0 : 0.0;
-    }
-    return matrice;
 }

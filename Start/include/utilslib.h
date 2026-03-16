@@ -103,9 +103,11 @@ double my_sqrt(double nb);
 void print_matrix(double **matrice, int line, int col);
 double **multiplies_two_matrices(double **A, double **B, int sizeA, int sizeB);
 double **add_two_matrices(double **A, double **B, int sizeA, int sizeB);
+double **soustract_two_matrices(double **A, double **B, int sizeA, int sizeB);
 double **divise_matrice_by_double(double **A, int sizeA, double divise_by);
 double **construct_matrice(double *A, int sizeA);
 double **identity_matrice(int len);
+double **dup_matrice(double **A, int size);
 double my_factorial(int nb);
 
 /* ============================================================

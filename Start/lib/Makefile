@@ -19,7 +19,8 @@ SRC = 	src/char/is_digit.c \
 		src/maths/my_power.c \
 		src/maths/my_sort_int_array.c \
 		src/maths/my_factorial.c \
-		src/maths/matrice.c \
+		src/maths/matrice_declare.c \
+		src/maths/matrice_compute.c \
 		src/maths/square_root.c \
 		src/maths/print_matrice.c \
 		src/int_str/get_precision.c \
