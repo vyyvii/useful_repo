@@ -59,9 +59,8 @@ int count_char(char *str, char c)
 
     if (!str)
         return 0;
-    for (int i = 0; str[i]; i++) {
+    for (int i = 0; str[i]; i++)
         if (str[i] == c)
             result++;
-    }
     return result;
 }

@@ -31,8 +31,11 @@
 #ifndef UTILSLIB
     #define UTILSLIB
     #define SUCCESS 0
+    #define OK 1
     #define FAILURE 84
     #define CHUNK 128
+    #define NEW_LINE '\n'
+    #define NULL_BYTE '\0'
     #include <stddef.h>
     #include <stdio.h>
     #include <stdlib.h>
@@ -92,7 +95,6 @@ int is_lowerletter(char c);
 int is_upperletter(char c);
 void my_putchar(char c);
 void my_putchar_error(char c);
-int nb_chars(char *str, char c);
 
 /* ============================================================
 ** MATHS
@@ -217,5 +219,31 @@ char *open_file(char *file);
 
 void free_table(void **table);
 void free_partial_table(void **table, int n);
+
+/* ============================================================
+** CSV
+** ============================================================ */
+
+typedef enum {
+    BOOL,
+    INT,
+    UINT,
+    FLOAT,
+    STRING,
+    UNDEFINED
+} column_type_t;
+
+typedef struct {
+    int nb_rows;
+    int nb_columns;
+    char **column_names;
+    column_type_t *column_types;
+    char ***data;
+    char *separator;
+} dataframe_t;
+
+dataframe_t *df_read_csv(const char *filename, const char *separator);
+int df_write_csv(dataframe_t *dataframe, const char *filename);
+
 
 #endif /* !UTILSLIB */

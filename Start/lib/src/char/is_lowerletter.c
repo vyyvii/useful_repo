@@ -17,7 +17,5 @@
  */
 int is_lowerletter(char c)
 {
-    if (c >= 'a' && c <= 'z')
-        return 1;
-    return 0;
+    return c >= 'a' && c <= 'z' ? 1 : 0;
 }

@@ -30,6 +30,6 @@ char *my_strjoin(char const *s1, char const *s2)
         res[i] = s1[i];
     for (i = 0; i < len2; i++)
         res[len1 + i] = s2[i];
-    res[len1 + len2] = '\0';
+    res[len1 + len2] = NULL_BYTE;
     return res;
 }

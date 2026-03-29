@@ -21,8 +21,7 @@ int my_str_isalphanumeric(char const *str)
     if (!str)
         return 0;
     while (*str) {
-        if ((*str >= 65 && *str <= 90) || (*str >= 97 && *str <= 122)
-            || *str == 95 || (*str >= 48 && *str <= 57))
+        if (my_str_isalpha(str) || *str == '_' || my_str_isnum(str))
             str++;
         else
             return 0;

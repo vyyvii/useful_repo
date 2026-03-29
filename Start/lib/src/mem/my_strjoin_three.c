@@ -34,6 +34,6 @@ char *my_strjoin_three(char const *s1, char const *s2, char const *s3)
         res[len1 + i] = s2[i];
     for (i = 0; i < len3; i++)
         res[len1 + len2 + i] = s3[i];
-    res[len1 + len2 + len3] = '\0';
+    res[len1 + len2 + len3] = NULL_BYTE;
     return res;
 }

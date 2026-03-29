@@ -12,7 +12,6 @@ SRC = 	src/char/is_digit.c \
 		src/char/is_lowerletter.c \
 		src/char/is_upperletter.c \
 		src/char/my_putchar.c \
-		src/char/nb_char.c \
 		src/maths/my_find_prime_sup.c \
 		src/maths/my_is_prime.c \
 		src/maths/my_isneg.c \
@@ -33,12 +32,12 @@ SRC = 	src/char/is_digit.c \
 		src/int_str/my_put_nbr.c \
 		src/int_str/verif_double.c \
 		src/int_str/verif_int.c \
-		src/matrice/ac.c \
-		src/matrice/alpha_sort.c \
-		src/matrice/count_lines.c \
-		src/matrice/my_show_word_array.c \
-		src/matrice/str_to_array.c \
-		src/matrice/str_to_matrice.c \
+		src/arrays/ac.c \
+		src/arrays/alpha_sort.c \
+		src/arrays/count_lines.c \
+		src/arrays/my_show_word_array.c \
+		src/arrays/str_to_array.c \
+		src/arrays/str_to_matrice.c \
 		src/mem/free_table.c \
 		src/mem/my_memcpy.c \
 		src/mem/my_memset.c \

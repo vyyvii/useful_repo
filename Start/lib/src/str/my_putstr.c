@@ -18,7 +18,7 @@ void my_putstr(char const *str)
 {
     if (!str)
         return;
-    while (*str != '\0') {
+    while (*str != NULL_BYTE) {
         my_putchar(*str);
         str++;
     }
@@ -35,7 +35,7 @@ void my_putstr_error(char const *str)
 {
     if (!str)
         return;
-    while (*str != '\0') {
+    while (*str != NULL_BYTE) {
         my_putchar_error(*str);
         str++;
     }

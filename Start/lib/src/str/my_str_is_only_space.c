@@ -19,9 +19,9 @@ int my_str_is_only_space(char *str)
 {
     if (!str)
         return 1;
-    for (int i = 0; str[i]; i++) {
-        if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != '\0')
+    for (int i = 0; str[i]; i++)
+        if (str[i] != ' ' && str[i] != '\t'
+            && str[i] != NEW_LINE && str[i] != NULL_BYTE)
             return 0;
-    }
     return 1;
 }

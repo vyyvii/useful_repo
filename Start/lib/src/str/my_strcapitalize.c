@@ -7,12 +7,6 @@
 
 #include "utilslib.h"
 
-static int ltr(char c)
-{
-    return (c < 65 || c > 90) && (c < 97 || c > 122) && (c < 48 || c > 57)
-        ? 1 : 0;
-}
-
 /**
  * @ingroup str
  * @brief Capitalizes the first letter of each word, makes others lowercase.
@@ -28,11 +22,12 @@ char *my_strcapitalize(char *str)
 
     if (!str)
         return NULL;
-    while (str[i] != '\0') {
-        if (str[i] >= 65 && str[i] <= 90)
-            str[i] = str[i] + 32;
-        if (str[i] >= 97 && str[i] <= 122 && (i == 0 || ltr(str[i - 1]) == 1))
-            str[i] = str[i] - 32;
+    while (str[i] != NULL_BYTE) {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] += 32;
+        if (str[i] >= 'a' && str[i] <= 'z'
+            && (i == 0 || is_letter(str[i - 1]) == 1))
+            str[i] -= - 32;
         i++;
     }
     return str;

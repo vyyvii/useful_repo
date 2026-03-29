@@ -9,7 +9,7 @@
 
 /**
  * @ingroup mem
- * @brief Copies at most n characters from src into dest and appends '\0'.
+ * @brief Copies at most n characters from src into dest and appends NULL_BYTE.
  * @param dest Destination buffer.
  * @param src Source string.
  * @param size Max number of characters to copy.
@@ -28,7 +28,7 @@ char *my_strncpy(char *dest, const char *src, size_t n)
         i++;
     }
     while (i < n) {
-        dest[i] = '\0';
+        dest[i] = NULL_BYTE;
         i++;
     }
     return dest;

@@ -9,7 +9,7 @@
 
 /**
  * @ingroup str
- * @brief Returns the length of a string (excluding '\0').
+ * @brief Returns the length of a string (excluding NULL_BYTE).
  * @param str String.
  * @return Number of characters.
  * @note Complexity: O(n)
@@ -22,7 +22,7 @@ int my_strlen(char const *str)
 
     if (!str)
         return len;
-    while (*str != '\0') {
+    while (*str != NULL_BYTE) {
         len++;
         str++;
     }

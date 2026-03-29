@@ -25,7 +25,7 @@ char *take_user_input(void)
         if (input)
             free(input);
         return NULL;
-    } else if (len > 0 && input[len - 1] == '\n')
-        input[len - 1] = '\0';
+    } else if (len > 0 && input[len - 1] == NEW_LINE)
+        input[len - 1] = NULL_BYTE;
     return input;
 }

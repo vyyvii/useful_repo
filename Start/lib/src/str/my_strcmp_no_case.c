@@ -10,7 +10,7 @@
 
 static char to_lower(char c)
 {
-    return (c >= 'A' && c <= 'Z') ? c + 32 : c;
+    return (is_upperletter(c)) ? c + 32 : c;
 }
 
 /**
@@ -25,8 +25,8 @@ static char to_lower(char c)
 int my_strcmp_no_case(char *a, char *b)
 {
     int i = 0;
-    char ca = '\0';
-    char cb = '\0';
+    char ca = NULL_BYTE;
+    char cb = NULL_BYTE;
 
     if (!a || !b)
         return (!a && !b) ? 1 : 0;

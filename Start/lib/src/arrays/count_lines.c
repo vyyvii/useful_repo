@@ -9,9 +9,9 @@
 
 /**
  * @ingroup matrice
- * @brief Counts the number of lines based on '\n'.
+ * @brief Counts the number of lines based on NEW_LINE.
  * @param str Source string.
- * @return Number of lines (= number of '\n' + 1).
+ * @return Number of lines (= number of NEW_LINE + 1).
  * @note Complexity: O(n)
  * @note Part of UtilsLib by Victor Defauchy.
  */
@@ -22,9 +22,8 @@ int count_lines(char *str)
 
     if (!len)
         return 0;
-    for (size_t i = 0; i < len; i++) {
-        if (str[i] == '\n')
+    for (size_t i = 0; i < len; i++)
+        if (str[i] == NEW_LINE)
             lines++;
-    }
     return lines;
 }

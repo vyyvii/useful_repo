@@ -17,7 +17,5 @@
  */
 int is_upperletter(char c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return 1;
-    return 0;
+    return c >= 'A' && c <= 'Z' ? 1 : 0;
 }

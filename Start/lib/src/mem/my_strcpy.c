@@ -9,7 +9,7 @@
 
 /**
  * @ingroup mem
- * @brief Copies src into dest (including '\0').
+ * @brief Copies src into dest (including NULL_BYTE).
  * @param dest Destination buffer (large enough).
  * @param src Source string.
  * @return Pointer to dest.
@@ -22,10 +22,10 @@ char *my_strcpy(char *dest, char const *src)
 
     if (!dest || !src)
         return NULL;
-    while (src[i] != '\0') {
+    while (src[i] != NULL_BYTE) {
         dest[i] = src[i];
         i++;
     }
-    dest[i] = '\0';
+    dest[i] = NULL_BYTE;
     return dest;
 }

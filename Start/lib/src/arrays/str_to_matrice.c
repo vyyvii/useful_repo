@@ -33,7 +33,7 @@ static char *duplicate_word(char *str, int start, int len)
     if (!res)
         return NULL;
     my_strncpy(res, str + start, len);
-    res[len] = '\0';
+    res[len] = NULL_BYTE;
     return res;
 }
 
@@ -44,7 +44,7 @@ static int count_words(char *str, char *delims)
 
     while (str[i]) {
         i = next_word(str, delims, i);
-        if (str[i] == '\0')
+        if (str[i] == NULL_BYTE)
             break;
         count++;
         i += word_length(str, delims, i);
@@ -60,7 +60,7 @@ static int fill_words(char *str, char *delims, char **array)
 
     while (str[i]) {
         i = next_word(str, delims, i);
-        if (str[i] == '\0')
+        if (str[i] == NULL_BYTE)
             break;
         len = word_length(str, delims, i);
         array[j] = duplicate_word(str, i, len);

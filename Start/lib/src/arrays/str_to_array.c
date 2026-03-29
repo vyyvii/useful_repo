@@ -19,7 +19,7 @@ static int valid_word(int i, char **array, char *str, int *cell)
 
     while (str[end] && !is_sep(str[end]))
         end++;
-    if (str[end] == '\0' || is_sep(str[end])) {
+    if (str[end] == NULL_BYTE || is_sep(str[end])) {
         array[*cell] = strslice(str, start, end);
         if (!array[*cell])
             free_partial_table((void **)array, *cell);
@@ -45,8 +45,7 @@ char **str_to_array(char *str)
     int i = 0;
 
     if (!str || !array || my_str_is_only_space(str)) {
-        if (array)
-            free(array);
+        free(array);
         return NULL;
     }
     while (str[i]) {

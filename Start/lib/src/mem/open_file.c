@@ -38,7 +38,7 @@ static int file_runner(int fd, size_t *tot, char **buffer)
     }
     if (read_size < 0)
         return FAILURE;
-    (*buffer)[len] = '\0';
+    (*buffer)[len] = NULL_BYTE;
     return SUCCESS;
 }
 
@@ -46,7 +46,7 @@ static int file_runner(int fd, size_t *tot, char **buffer)
  * @ingroup mem
  * @brief Reads a whole file into memory.
  * @param file File path.
- * @return Allocated buffer containing the content (terminated by '\0'),
+ * @return Allocated buffer containing the content (terminated by NULL_BYTE),
  * or NULL on error.
  * @warning MAGIC NUMBERS because the allocated chunk is double if necessary !
  * @note Complexity: O(file size)
@@ -57,7 +57,7 @@ static int file_runner(int fd, size_t *tot, char **buffer)
 char *open_file(char *file)
 {
     int fd = open(file, O_RDONLY);
-    size_t tot = 16084;
+    size_t tot = CHUNK;
     char *buffer = malloc(tot);
 
     if (!buffer)

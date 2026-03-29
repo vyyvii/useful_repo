@@ -19,12 +19,12 @@ char *my_revstr(char *str)
 {
     int count = 0;
     int i = 0;
-    char switcher = '\0';
+    char switcher = NULL_BYTE;
     int digit_switch = 0;
 
     if (!str)
         return NULL;
-    while (str[i] != '\0') {
+    while (str[i] != NULL_BYTE) {
         count++;
         i++;
     }

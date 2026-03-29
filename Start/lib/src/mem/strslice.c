@@ -35,6 +35,6 @@ char *strslice(char *str, int from, int to)
         out[j] = str[i];
         j++;
     }
-    out[j] = '\0';
+    out[j] = NULL_BYTE;
     return out;
 }

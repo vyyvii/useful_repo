@@ -9,7 +9,7 @@
 
 /**
  * @ingroup matrice
- * @brief Prints an array of words, one per line, ending with '\n'.
+ * @brief Prints an array of words, one per line, ending with NEW_LINE.
  * @param tab NULL-terminated array.
  * @return 0.
  * @note Complexity: O(total characters)
@@ -23,7 +23,7 @@ int my_show_word_array(char const **tab)
         return FAILURE;
     while (tab[i]) {
         my_putstr(tab[i]);
-        my_putchar('\n');
+        my_putchar(NEW_LINE);
         i++;
     }
     return SUCCESS;
