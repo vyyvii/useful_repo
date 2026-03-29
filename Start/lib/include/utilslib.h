@@ -211,6 +211,7 @@ int count_lines(char *str);
 
 void my_swap(void *a, void *b, size_t size);
 void *my_memcpy(void *dest, const void *src, size_t n);
+void *my_memset(void *ptr, int value, size_t num);
 
 char *open_file(char *file);
 

@@ -41,6 +41,7 @@ SRC = 	src/char/is_digit.c \
 		src/matrice/str_to_matrice.c \
 		src/mem/free_table.c \
 		src/mem/my_memcpy.c \
+		src/mem/my_memset.c \
 		src/mem/my_strcpy.c \
 		src/mem/my_strdup.c \
 		src/mem/my_strncpy.c \
