@@ -7,6 +7,16 @@
 
 #include "utilslib.h"
 
+/**
+ * @ingroup csv
+ * @brief Copies the column names of a dataframe
+ * into a new NULL-terminated array.
+ * @param df Pointer to the dataframe.
+ * @return Newly allocated array of duplicated column names, or NULL on failure.
+ * @note Complexity: O(n * m) (n columns, m average string length).
+ * @note Part of UtilsLib by Victor Defauchy.
+ * @pre df must be valid and df->column_names must be initialized.
+ */
 char **copie_heads(dataframe_t *df)
 {
     char **column_names = malloc(sizeof(char *) * (df->nb_columns + 1));
@@ -24,6 +34,15 @@ char **copie_heads(dataframe_t *df)
     return column_names;
 }
 
+/**
+ * @ingroup csv
+ * @brief Frees a NULL-terminated 3D array of strings (CSV-like structure).
+ * @param data Triple pointer representing rows -> columns -> strings.
+ * @return None.
+ * @note Complexity: O(n * m) (n rows, m columns).
+ * @note Part of UtilsLib by Victor Defauchy.
+ * @pre data must be NULL or a valid NULL-terminated array.
+ */
 void free_csv(char ***data)
 {
     if (!data)
@@ -36,6 +55,16 @@ void free_csv(char ***data)
     free(data);
 }
 
+/**
+ * @ingroup csv
+ * @brief Frees the first n rows of a 3D array of strings.
+ * @param data Triple pointer representing rows -> columns -> strings.
+ * @param n Number of rows to free.
+ * @return None.
+ * @note Complexity: O(n * m).
+ * @note Part of UtilsLib by Victor Defauchy.
+ * @pre data must be NULL or partially allocated up to n rows.
+ */
 void free_partial_csv(char ***data, int n)
 {
     if (!data)

@@ -12,10 +12,12 @@
  * @details
  * This library provides utilities for:
  * - character classification (letter, digit, case),
+ * - matrices operations & maths functions (add, mean, matrices),
+ * - csv tools (read, write (csv)),
  * - integer manipulation (arithmetic, primality, sorting),
  * - conversion between strings and numbers,
  * - string operations (tests, copies, joins, search),
- * - management of string arrays (matrices),
+ * - management of string arrays (arrays),
  * - low-level memory primitives (copy, swap, file reading).
  *
  * Functions that allocate memory return a pointer that must be freed
@@ -25,7 +27,7 @@
  *
  * @note Time complexity is indicated when relevant.
  * @author Victor Defauchy
- * @date 16.03.2026
+ * @date 29.03.2026
  */
 
 #ifndef UTILSLIB
@@ -76,6 +78,10 @@
 /**
  * @defgroup mem Memory and I/O
  * @brief Low-level memory tools and file reading.
+ */
+/**
+ * @defgroup csv CSV tools
+ * @brief Read & write functions for CSV files.
  */
 
 /* ============================================================
@@ -244,6 +250,8 @@ typedef struct {
 
 dataframe_t *df_read_csv(const char *filename, const char *separator);
 int df_write_csv(dataframe_t *dataframe, const char *filename);
-
+char **copie_heads(dataframe_t *df);
+void free_csv(char ***data);
+void free_partial_csv(char ***data, int n);
 
 #endif /* !UTILSLIB */

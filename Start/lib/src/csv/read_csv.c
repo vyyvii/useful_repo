@@ -151,6 +151,16 @@ static char **open_csv(char *file_path)
     return (matrice_file) ? matrice_file : NULL;
 }
 
+/**
+ * @ingroup csv
+ * @brief Reads a CSV file and loads it into a dataframe structure.
+ * @param filename Path to the CSV file.
+ * @param separator Field separator (e.g. ","), defaults to "," if NULL.
+ * @return Pointer to a newly allocated dataframe, or NULL on failure.
+ * @note Complexity: O(n * m) (n rows, m columns).
+ * @note Part of UtilsLib by Victor Defauchy.
+ * @pre filename must be a valid path to a readable file.
+ */
 dataframe_t *df_read_csv(const char *filename, const char *separator)
 {
     char **file = open_csv((char *)filename);
