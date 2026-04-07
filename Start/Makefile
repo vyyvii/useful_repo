@@ -18,9 +18,9 @@ NAME 			= [project]
 # ─────────────────────────────────────────────────────────────
 # SOURCE FILES AND OBJECT FILES
 # ─────────────────────────────────────────────────────────────
-SRC 			= src/[project].c
-SRC_MAIN		= src/main.c
-SRC_TEST 		= tests/test_tool.c
+SRC 			= 	src/[project].c
+SRC_MAIN		= 	src/main.c
+SRC_TEST 		= 	tests/test_tool.c
 
 OBJ 			:= $(patsubst %.c,%.o,$(SRC))
 OBJ_MAIN		:= $(patsubst %.c,%.o,$(SRC_MAIN))
@@ -42,8 +42,7 @@ CFLAGS 			= $(CFLAGS_COMMON) $(CFLAGS_RELEASE)
 # ─────────────────────────────────────────────────────────────
 # LIBS
 # ─────────────────────────────────────────────────────────────
-LDLIBS 			= -lUtilsLib
-LDFLAGS 		= -L.
+LDFLAGS 		= -L./ -lUtilsLib
 
 # ─────────────────────────────────────────────────────────────
 # TEST FLAGS & TESTS LIBS
