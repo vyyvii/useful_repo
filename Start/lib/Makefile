@@ -6,25 +6,20 @@
 ##
 
 # ─────────────────────────────────────────────────────────────
-# PHONY TARGETS
-# ─────────────────────────────────────────────────────────────
-.PHONY: all clean fclean re debug
-
-# ─────────────────────────────────────────────────────────────
 # NAME
 # ─────────────────────────────────────────────────────────────
-NAME = libUtilsLib.a
+NAME 		= 	libUtilsLib.a
 
 # ─────────────────────────────────────────────────────────────
 # SOURCE FILES AND OBJECT FILES
 # ─────────────────────────────────────────────────────────────
-SRC_CHAR	 = 	src/char/is_digit.c \
+SRC_CHAR	= 	src/char/is_digit.c \
 				src/char/is_letter.c \
 				src/char/is_lowerletter.c \
 				src/char/is_upperletter.c \
 				src/char/is_sep.c \
 				src/char/my_putchar.c
-SRC_MATHS	 = 	src/maths/my_find_prime_sup.c \
+SRC_MATHS	= 	src/maths/my_find_prime_sup.c \
 				src/maths/my_is_prime.c \
 				src/maths/my_isneg.c \
 				src/maths/my_power.c \
@@ -37,20 +32,20 @@ SRC_MATHS	 = 	src/maths/my_find_prime_sup.c \
 				src/maths/list_min_max.c \
 				src/maths/list_operations_float.c \
 				src/maths/list_operations_int.c
-SRC_INT_STR	 =	src/int_str/get_precision.c \
+SRC_INT_STR =	src/int_str/get_precision.c \
 				src/int_str/my_get_double_nbr.c \
 				src/int_str/my_get_longlong_nbr.c \
 				src/int_str/my_getnbr.c \
 				src/int_str/my_put_nbr.c \
 				src/int_str/verif_double.c \
 				src/int_str/verif_int.c
-SRC_ARRAYS	 =	src/arrays/ac.c \
+SRC_ARRAYS	=	src/arrays/ac.c \
 				src/arrays/alpha_sort.c \
 				src/arrays/count_lines.c \
 				src/arrays/my_show_word_array.c \
 				src/arrays/str_to_array.c \
 				src/arrays/str_to_matrice.c
-SRC_MEM		 =	src/mem/free_table.c \
+SRC_MEM		=	src/mem/free_table.c \
 				src/mem/my_memcpy.c \
 				src/mem/my_memset.c \
 				src/mem/my_strcpy.c \
@@ -62,7 +57,7 @@ SRC_MEM		 =	src/mem/free_table.c \
 				src/mem/my_strjoin_three.c \
 				src/mem/my_strjoin.c \
 				src/mem/putcat.c
-SRC_STR		 =	src/str/count_contains_char.c \
+SRC_STR		=	src/str/count_contains_char.c \
 				src/str/my_putstr.c \
 				src/str/my_revstr.c \
 				src/str/my_str_is_only_space.c \
@@ -80,42 +75,44 @@ SRC_STR		 =	src/str/count_contains_char.c \
 				src/str/my_strstr.c \
 				src/str/my_strupcase.c \
 				src/str/my_strlowcase.c \
-				src/str/take_user_input.c \
-				src/str/print_bytes.c
-SRC_BOOL	 =	src/bool/get_bool.c
-SRC_CSV		 =	src/csv/helpers.c \
+				src/str/take_user_input.c
+SRC_BOOL	=	src/bool/get_bool.c
+SRC_CSV		=	src/csv/helpers.c \
 				src/csv/read_csv.c \
 				src/csv/write_csv.c
+SRC_BINARY	=   src/binary/print_bytes.c \
+				src/binary/read_bin.c
 
-OBJ_CHAR	:= $(patsubst %.c,%.o,$(SRC_CHAR))
-OBJ_MATHS	:= $(patsubst %.c,%.o,$(SRC_MATHS))
-OBJ_INT_STR	:= $(patsubst %.c,%.o,$(SRC_INT_STR))
-OBJ_ARRAYS	:= $(patsubst %.c,%.o,$(SRC_ARRAYS))
-OBJ_MEM	 	:= $(patsubst %.c,%.o,$(SRC_MEM))
-OBJ_STR	 	:= $(patsubst %.c,%.o,$(SRC_STR))
-OBJ_BOOL	:= $(patsubst %.c,%.o,$(SRC_BOOL))
-OBJ_CSV	 	:= $(patsubst %.c,%.o,$(SRC_CSV))
-OBJ = $(OBJ_CHAR) $(OBJ_MATHS) $(OBJ_INT_STR) $(OBJ_ARRAYS) $(OBJ_MEM) $(OBJ_STR) $(OBJ_BOOL) $(OBJ_CSV)
+OBJ_CHAR	:= 	$(patsubst %.c,%.o,$(SRC_CHAR))
+OBJ_MATHS	:= 	$(patsubst %.c,%.o,$(SRC_MATHS))
+OBJ_INT_STR	:= 	$(patsubst %.c,%.o,$(SRC_INT_STR))
+OBJ_ARRAYS	:= 	$(patsubst %.c,%.o,$(SRC_ARRAYS))
+OBJ_MEM	 	:= 	$(patsubst %.c,%.o,$(SRC_MEM))
+OBJ_STR	 	:= 	$(patsubst %.c,%.o,$(SRC_STR))
+OBJ_BOOL	:= 	$(patsubst %.c,%.o,$(SRC_BOOL))
+OBJ_CSV	 	:= 	$(patsubst %.c,%.o,$(SRC_CSV))
+OBJ_BINARY 	:= 	$(patsubst %.c,%.o,$(SRC_BINARY))
+OBJ 		= 	$(OBJ_CHAR) $(OBJ_MATHS) $(OBJ_INT_STR) $(OBJ_ARRAYS) $(OBJ_MEM) $(OBJ_STR) $(OBJ_BOOL) $(OBJ_CSV) $(OBJ_BINARY)
 
 # ────────────────────────────────────────────────────────────
 # COMPILER
 # ─────────────────────────────────────────────────────────────
-CC 			 = epiclang
+CC 				= 	epiclang
 
 # ─────────────────────────────────────────────────────────────
 # COMPILATION FLAGS
 # ─────────────────────────────────────────────────────────────
-CFLAGS_COMMON  = -Wall -Wextra -Iinclude
-CFLAGS_DEBUG   = -g3 -O0
-CFLAGS_RELEASE = -O2
-CFLAGS = $(CFLAGS_COMMON) $(CFLAGS_RELEASE)
+CFLAGS_COMMON  	= 	-Wall -Wextra -Iinclude
+CFLAGS_DEBUG   	= 	-g3 -O0
+CFLAGS_RELEASE 	= 	-O2
+CFLAGS 			= 	$(CFLAGS_COMMON) $(CFLAGS_RELEASE)
 
 # ─────────────────────────────────────────────────────────────
 # TOOLS
 # ─────────────────────────────────────────────────────────────
-REMOVE 		 = rm -rf
-RM_FILES 	 = "*.gcno" "*.gcda" "*.html" "*.css" \
-			   "*.gcov" "*.log" "*.out" "*.o" "*.swp"
+REMOVE 		 	= 	rm -rf
+RM_FILES 	 	= 	"*.gcno" "*.gcda" "*.html" "*.css" \
+			   		"*.gcov" "*.log" "*.out" "*.o" "*.swp"
 
 # ─────────────────────────────────────────────────────────────
 # BUILDING RULES
@@ -148,3 +145,8 @@ fclean: clean
 	for f in $(RM_FILES); do find . -name "$$f" -delete; done
 
 re: fclean all
+
+# ─────────────────────────────────────────────────────────────
+# PHONY TARGETS
+# ─────────────────────────────────────────────────────────────
+.PHONY: all clean fclean re debug

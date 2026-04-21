@@ -8,7 +8,7 @@
 #include "utilslib.h"
 
 /**
- * @ingroup str
+ * @ingroup binary
  * @brief Converts 4 bits into a hex value.
  * @param b The 4 bits
  * @return The hex value of the 4 bits.
@@ -20,7 +20,7 @@ char to_hex(unsigned char b)
 }
 
 /**
- * @ingroup str
+ * @ingroup binary
  * @brief Converts a byte (8 bits) into hex value.
  * @param b The byte
  * @return Nothing
@@ -30,9 +30,9 @@ void print_bytes(unsigned char b)
 {
     char hex[3];
 
-    hex[0] = to_hex(b / 16);
-    hex[1] = to_hex(b % 16);
-    hex[2] = '\0';
+    hex[0] = to_hex(b & 0xF0);
+    hex[1] = to_hex(b & 0x0F);
+    hex[2] = NULL_BYTE;
     my_putstr(hex);
     my_putchar(' ');
 }

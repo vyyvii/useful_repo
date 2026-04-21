@@ -85,6 +85,10 @@
  * @defgroup csv CSV tools
  * @brief Read & write functions for CSV files.
  */
+/**
+ * @defgroup binary Binary tools
+ * @brief Tools usefull for reading raw binary in C
+ */
 
 /* ============================================================
 ** BOOL
@@ -201,9 +205,6 @@ void putcat(char *txt1, char *txt2);
 char *take_user_input(void);
 char **str_to_array(char *str);
 
-char to_hex(unsigned char b);
-void print_bytes(unsigned char b);
-
 /* ============================================================
 ** MATRICE
 ** ============================================================ */
@@ -262,5 +263,15 @@ char **copie_heads(dataframe_t *df);
 void free_csv(char ***data);
 void free_partial_csv(char ***data, int n);
 void df_free(dataframe_t *dataframe);
+
+/* ============================================================
+** BINARY
+** ============================================================ */
+
+char to_hex(unsigned char b);
+void print_bytes(unsigned char b);
+int read_int(unsigned char *buffer, int i);
+short read_short(unsigned char *buffer, int i);
+unsigned char read_byte(unsigned char *buffer, int i);
 
 #endif /* !UTILSLIB */
