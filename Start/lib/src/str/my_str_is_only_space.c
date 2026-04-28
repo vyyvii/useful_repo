@@ -18,10 +18,10 @@
 int my_str_is_only_space(char *str)
 {
     if (!str)
-        return OK;
+        return TRUE;
     for (int i = 0; str[i]; i++)
         if (str[i] != ' ' && str[i] != '\t'
             && str[i] != NEW_LINE && str[i] != NULL_BYTE)
-            return PASS;
-    return OK;
+            return FALSE;
+    return TRUE;
 }

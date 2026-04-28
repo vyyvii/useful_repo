@@ -17,5 +17,5 @@
  */
 int is_digit(char c)
 {
-    return c >= '0' && c <= '9' ? OK : PASS;
+    return c >= '0' && c <= '9' ? TRUE : FALSE;
 }

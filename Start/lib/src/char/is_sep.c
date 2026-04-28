@@ -17,5 +17,5 @@
  */
 int is_sep(char c)
 {
-    return (c == ' ' || c == '\t') ? OK : PASS;
+    return (c == ' ' || c == '\t') ? TRUE : FALSE;
 }

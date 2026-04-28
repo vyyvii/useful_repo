@@ -20,7 +20,7 @@ int nb_args(char **args)
     int nb_args = 0;
 
     if (!args)
-        return PASS;
+        return FALSE;
     while (args[nb_args])
         nb_args++;
     return nb_args;

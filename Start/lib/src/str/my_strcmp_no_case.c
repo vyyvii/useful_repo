@@ -29,17 +29,17 @@ int my_strcmp_no_case(char *a, char *b)
     char cb = NULL_BYTE;
 
     if (!a || !b)
-        return (!a && !b) ? OK : PASS;
+        return (!a && !b) ? TRUE : FALSE;
     while (a[i] && b[i]) {
         ca = to_lower(a[i]);
         cb = to_lower(b[i]);
         if (ca < cb)
-            return -OK;
+            return -TRUE;
         if (ca > cb)
-            return OK;
+            return TRUE;
         i++;
     }
     if (a[i] == b[i])
-        return PASS;
-    return (a[i] < b[i]) ? -OK : OK;
+        return FALSE;
+    return (a[i] < b[i]) ? -TRUE : TRUE;
 }

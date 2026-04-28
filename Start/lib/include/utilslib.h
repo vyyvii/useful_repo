@@ -33,9 +33,9 @@
 #ifndef UTILSLIB
     #define UTILSLIB
     #define SUCCESS 0
-    #define PASS 0
-    #define PASS_FLT 0.0
-    #define OK 1
+    #define FALSE 0
+    #define FALSE_FLT 0.0
+    #define TRUE 1
     #define FAILURE 84
     #define CHUNK 128
     #define NEW_LINE '\n'

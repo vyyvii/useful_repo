@@ -19,12 +19,12 @@
 int my_str_isalphanumeric(char const *str)
 {
     if (!str)
-        return PASS;
+        return FALSE;
     while (*str) {
         if (my_str_isalpha(str) || *str == '_' || my_str_isnum(str))
             str++;
         else
-            return PASS;
+            return FALSE;
     }
-    return OK;
+    return TRUE;
 }

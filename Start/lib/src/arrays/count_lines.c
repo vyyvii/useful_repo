@@ -21,7 +21,7 @@ int count_lines(char *str)
     size_t len = (size_t)my_strlen(str);
 
     if (!len)
-        return PASS;
+        return FALSE;
     for (size_t i = 0; i < len; i++)
         if (str[i] == NEW_LINE)
             lines++;

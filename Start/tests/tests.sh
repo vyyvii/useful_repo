@@ -11,7 +11,7 @@ run_test()
     shift
 
     if eval "$@"; then
-        echo "$name : OK"
+        echo "$name : TRUE"
         ((success++))
     else
         echo "$name : KO"

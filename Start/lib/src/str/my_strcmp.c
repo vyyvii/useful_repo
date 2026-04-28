@@ -21,10 +21,10 @@ int my_strcmp(char const *s1, char const *s2)
     int i = 0;
 
     if (!s1 || !s2)
-        return (!s1 && !s2) ? OK : PASS;
+        return (!s1 && !s2) ? TRUE : FALSE;
     while (s1[i] && s2[i] && s1[i] == s2[i])
         i++;
     if (s1[i] == s2[i])
-        return PASS;
-    return (s1[i] > s2[i]) ? OK : -OK;
+        return FALSE;
+    return (s1[i] > s2[i]) ? TRUE : -TRUE;
 }

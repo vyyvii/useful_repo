@@ -39,9 +39,9 @@ int contains_char(char *str, char c)
 {
     for (int i = 0; str[i]; i++) {
         if (str[i] == c)
-            return OK;
+            return TRUE;
     }
-    return PASS;
+    return FALSE;
 }
 
 /**
@@ -58,7 +58,7 @@ int count_char(char *str, char c)
     int result = 0;
 
     if (!str)
-        return PASS;
+        return FALSE;
     for (int i = 0; str[i]; i++)
         if (str[i] == c)
             result++;

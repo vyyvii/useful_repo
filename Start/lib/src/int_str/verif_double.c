@@ -13,9 +13,9 @@ static int detect_point_minus(char *number, int *i, int *is_point)
         && is_digit(number[*i - 1]) && is_digit(number[*i + 1])) {
         (*i)++;
         *is_point = 1;
-        return OK;
+        return TRUE;
     }
-    return PASS;
+    return FALSE;
 }
 
 /**

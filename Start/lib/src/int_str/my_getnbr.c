@@ -13,11 +13,11 @@ static int go_in_number(long *result, const char *str, int i, int sign)
         *result = *result * 10 + (str[i] - '0');
         i++;
         if (sign == 1 && *result > INT_MAX)
-            return PASS;
+            return FALSE;
         if (sign == -1 && *result > (long)INT_MAX + 1)
-            return PASS;
+            return FALSE;
     }
-    return OK;
+    return TRUE;
 }
 
 /**
@@ -37,7 +37,7 @@ int my_getnbr(const char *str)
     long result = 0;
 
     if (!str)
-        return PASS;
+        return FALSE;
     while (str[i] == ' ' || str[i] == '\t')
         i++;
     if (str[i] == '+' || str[i] == '-') {
@@ -46,8 +46,8 @@ int my_getnbr(const char *str)
         i++;
     }
     if (!is_digit(str[i]))
-        return PASS;
+        return FALSE;
     if (!go_in_number(&result, str, i, sign))
-        return PASS;
+        return FALSE;
     return (int)(result * sign);
 }

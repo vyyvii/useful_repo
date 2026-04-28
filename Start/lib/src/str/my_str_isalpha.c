@@ -18,6 +18,6 @@
 int my_str_isalpha(char const *str)
 {
     if (!str)
-        return PASS;
-    return (my_str_islower(str) || my_str_isupper(str)) ? OK : PASS;
+        return FALSE;
+    return (my_str_islower(str) || my_str_isupper(str)) ? TRUE : FALSE;
 }

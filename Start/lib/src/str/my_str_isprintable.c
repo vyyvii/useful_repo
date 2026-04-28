@@ -18,12 +18,12 @@
 int my_str_isprintable(char const *str)
 {
     if (!str)
-        return PASS;
+        return FALSE;
     while (*str) {
         if (*str >= ' ' && *str <= '~')
             str++;
         else
-            return PASS;
+            return FALSE;
     }
-    return OK;
+    return TRUE;
 }

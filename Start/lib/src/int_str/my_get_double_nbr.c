@@ -23,7 +23,7 @@ static int go_in_number(double *result, const char *str, int i)
             i++;
         }
     }
-    return OK;
+    return TRUE;
 }
 
 /**
@@ -42,7 +42,7 @@ double my_get_double_nbr(char const *str)
     double result = 0.0;
 
     if (!str)
-        return PASS_FLT;
+        return FALSE_FLT;
     while (str[i] == ' ' || str[i] == '\t')
         i++;
     if (str[i] == '+' || str[i] == '-') {
@@ -51,8 +51,8 @@ double my_get_double_nbr(char const *str)
         i++;
     }
     if (!is_digit(str[i]))
-        return PASS_FLT;
+        return FALSE_FLT;
     if (!go_in_number(&result, str, i))
-        return PASS_FLT;
+        return FALSE_FLT;
     return result * sign;
 }
