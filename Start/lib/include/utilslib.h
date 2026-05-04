@@ -268,18 +268,10 @@ void df_free(dataframe_t *dataframe);
 ** BINARY
 ** ============================================================ */
 
-    #define INT_SIZE 4
-    #define BYTE 8
-
 char to_hex(unsigned char b);
-void print_bytes(unsigned char b, int upcase);
-char *to_bytes(unsigned char b);
+void print_bytes(unsigned char b);
 int read_int(unsigned char *buffer, int i);
 short read_short(unsigned char *buffer, int i);
 unsigned char read_byte(unsigned char *buffer, int i);
-unsigned char *write_int(int nb);
-unsigned char *write_short(int nb);
-void write_hex(unsigned char *buffer, int size);
-void print_hex_int(int nb);
 
 #endif /* !UTILSLIB */

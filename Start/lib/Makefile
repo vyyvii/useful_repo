@@ -19,6 +19,19 @@ SRC_CHAR	= 	src/char/is_digit.c \
 				src/char/is_upperletter.c \
 				src/char/is_sep.c \
 				src/char/my_putchar.c
+SRC_MATHS	= 	src/maths/my_find_prime_sup.c \
+				src/maths/my_is_prime.c \
+				src/maths/my_isneg.c \
+				src/maths/my_power.c \
+				src/maths/my_sort_int_array.c \
+				src/maths/my_factorial.c \
+				src/maths/matrice_declare.c \
+				src/maths/matrice_compute.c \
+				src/maths/square_root.c \
+				src/maths/print_matrice.c \
+				src/maths/list_min_max.c \
+				src/maths/list_operations_float.c \
+				src/maths/list_operations_int.c
 SRC_INT_STR =	src/int_str/get_precision.c \
 				src/int_str/my_get_double_nbr.c \
 				src/int_str/my_get_longlong_nbr.c \
@@ -64,18 +77,22 @@ SRC_STR		=	src/str/count_contains_char.c \
 				src/str/my_strlowcase.c \
 				src/str/take_user_input.c
 SRC_BOOL	=	src/bool/get_bool.c
+SRC_CSV		=	src/csv/helpers.c \
+				src/csv/read_csv.c \
+				src/csv/write_csv.c
 SRC_BINARY	=   src/binary/print_bytes.c \
-				src/binary/read_bin.c \
-				src/binary/write_bin.c
+				src/binary/read_bin.c
 
 OBJ_CHAR	:= 	$(patsubst %.c,%.o,$(SRC_CHAR))
+OBJ_MATHS	:= 	$(patsubst %.c,%.o,$(SRC_MATHS))
 OBJ_INT_STR	:= 	$(patsubst %.c,%.o,$(SRC_INT_STR))
 OBJ_ARRAYS	:= 	$(patsubst %.c,%.o,$(SRC_ARRAYS))
 OBJ_MEM	 	:= 	$(patsubst %.c,%.o,$(SRC_MEM))
 OBJ_STR	 	:= 	$(patsubst %.c,%.o,$(SRC_STR))
 OBJ_BOOL	:= 	$(patsubst %.c,%.o,$(SRC_BOOL))
+OBJ_CSV	 	:= 	$(patsubst %.c,%.o,$(SRC_CSV))
 OBJ_BINARY 	:= 	$(patsubst %.c,%.o,$(SRC_BINARY))
-OBJ 		= 	$(OBJ_CHAR) $(OBJ_INT_STR) $(OBJ_ARRAYS) $(OBJ_MEM) $(OBJ_STR) $(OBJ_BOOL) $(OBJ_BINARY)
+OBJ 		= 	$(OBJ_CHAR) $(OBJ_MATHS) $(OBJ_INT_STR) $(OBJ_ARRAYS) $(OBJ_MEM) $(OBJ_STR) $(OBJ_BOOL) $(OBJ_CSV) $(OBJ_BINARY)
 
 # ────────────────────────────────────────────────────────────
 # COMPILER
