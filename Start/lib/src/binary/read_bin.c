@@ -17,8 +17,8 @@
  */
 int read_int(unsigned char *buffer, int i)
 {
-    return (buffer[i] << 24) | (buffer[i + 1] << 16)
-        | (buffer[i + 2] << 8) | (buffer[i + 3]);
+    return (buffer[i] << (BYTE * 3)) | (buffer[i + 1] << (BYTE * 2))
+        | (buffer[i + 2] << BYTE) | (buffer[i + 3]);
 }
 
 /**
@@ -31,7 +31,7 @@ int read_int(unsigned char *buffer, int i)
  */
 short read_short(unsigned char *buffer, int i)
 {
-    return (buffer[i] << 8) | (buffer[i + 1]);
+    return (buffer[i] << BYTE) | (buffer[i + 1]);
 }
 
 /**
