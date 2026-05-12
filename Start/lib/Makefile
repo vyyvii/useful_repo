@@ -67,6 +67,7 @@ SRC_BOOL	=	src/bool/get_bool.c
 SRC_BINARY	=   src/binary/print_bytes.c \
 				src/binary/read_bin.c \
 				src/binary/write_bin.c
+SRC_NCURSES = 	src/my_ncurses/utils.c
 
 OBJ_CHAR	:= 	$(patsubst %.c,%.o,$(SRC_CHAR))
 OBJ_INT_STR	:= 	$(patsubst %.c,%.o,$(SRC_INT_STR))
@@ -75,7 +76,8 @@ OBJ_MEM	 	:= 	$(patsubst %.c,%.o,$(SRC_MEM))
 OBJ_STR	 	:= 	$(patsubst %.c,%.o,$(SRC_STR))
 OBJ_BOOL	:= 	$(patsubst %.c,%.o,$(SRC_BOOL))
 OBJ_BINARY 	:= 	$(patsubst %.c,%.o,$(SRC_BINARY))
-OBJ 		= 	$(OBJ_CHAR) $(OBJ_INT_STR) $(OBJ_ARRAYS) $(OBJ_MEM) $(OBJ_STR) $(OBJ_BOOL) $(OBJ_BINARY)
+OBJ_NCURSES	:= 	$(patsubst %.c,%.o,$(SRC_NCURSES))
+OBJ 		= 	$(OBJ_CHAR) $(OBJ_INT_STR) $(OBJ_ARRAYS) $(OBJ_MEM) $(OBJ_STR) $(OBJ_BOOL) $(OBJ_BINARY) $(OBJ_NCURSES)
 
 # ────────────────────────────────────────────────────────────
 # COMPILER

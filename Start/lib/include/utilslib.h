@@ -19,6 +19,7 @@
  * - string operations (tests, copies, joins, search),
  * - management of string arrays (arrays),
  * - low-level memory primitives (copy, swap, file reading).
+ * - replicate of ncurses with ansi escape sequences
  *
  * Functions that allocate memory return a pointer that must be freed
  * by the caller via `free`. Some functions use system calls and standard
@@ -88,6 +89,10 @@
 /**
  * @defgroup binary Binary tools
  * @brief Tools usefull for reading raw binary in C
+ */
+/**
+ * @defgroup my_ncurses Terminal UI management
+ * @brief Replicate of ncurses with ansi escape sequences
  */
 
 /* ============================================================
@@ -281,5 +286,14 @@ unsigned char *write_int(int nb);
 unsigned char *write_short(int nb);
 void write_hex(unsigned char *buffer, int size);
 void print_hex_int(int nb);
+
+/* ============================================================
+** MY_NCURSES
+** ============================================================ */
+
+void put_cursor(int x, int y);
+void refresh_sreen(void);
+void cursor_home(void);
+void reset_color(void);
 
 #endif /* !UTILSLIB */
